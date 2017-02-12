@@ -1,4 +1,4 @@
-# Views
+# Шаблоны (Views)
 
 - [Creating Views](#creating-views)
 - [Passing Data To Views](#passing-data-to-views)
