@@ -1,4 +1,4 @@
-# Localization
+# Localization 
 
 - [Introduction](#introduction)
 - [Defining Translation Strings](#defining-translation-strings)
