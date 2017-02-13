@@ -10,9 +10,9 @@
 - [Переопределение языковых файлов пакета](#overriding-package-language-files)
 
 <a name="introduction"></a>
-## Introduction
+## Введение
 
-Laravel's localization features provide a convenient way to retrieve strings in various languages, allowing you to easily support multiple languages within your application. Language strings are stored in files within the `resources/lang` directory. Within this directory there should be a subdirectory for each language supported by the application:
+Возможности локализации Laravel предоставляют удобный способ получения строк на нескольких языках, что позволяет легко организовать поддержку нескольких языков вашим приложением. Языковые строки хранятся в файлах, располагающихся внутри директории `resources/lang`. В ней должны располагаться подпапки для каждого языка, поддерживаемого вашим приложением:
 
     /resources
         /lang
@@ -21,7 +21,7 @@ Laravel's localization features provide a convenient way to retrieve strings in 
             /es
                 messages.php
 
-All language files simply return an array of keyed strings. For example:
+Все языковые файлы возвращают простой массив ключей и строк. Например:
 
     <?php
 
@@ -29,9 +29,9 @@ All language files simply return an array of keyed strings. For example:
         'welcome' => 'Welcome to our application'
     ];
 
-### Configuring The Locale
+### Настройка локали
 
-The default language for your application is stored in the `config/app.php` configuration file. Of course, you may modify this value to suit the needs of your application. You may also change the active language at runtime using the `setLocale` method on the `App` facade:
+Стандартный язык вашего приложения указан в конфигурационном файле `config/app.php`. Конечно же, вы можете изменить это значение на основе потребностей вашего приложения. Вы также можете изменить активный язык в процессе работы приложения с помощью метода `setLocale` фасада `App`:
 
     Route::get('welcome/{locale}', function ($locale) {
         App::setLocale($locale);
@@ -39,13 +39,13 @@ The default language for your application is stored in the `config/app.php` conf
         //
     });
 
-You may configure a "fallback language", which will be used when the active language does not contain a given translation string. Like the default language, the fallback language is also configured in the `config/app.php` configuration file:
+Вы можете настроить "запасной язык", который будет использоваться в случаях, когда активный язык не содержит заданной строки перевода. Как и стандартный язык, запасной язык также настраивается в конфигурационном файле `config/app.php`:
 
     'fallback_locale' => 'en',
 
-#### Determining The Current Locale
+#### Определение текущей локали
 
-You may use the `getLocale` and `isLocale` methods on the `App` facade to determine the current locale or check if the locale is a given value:
+Вы можете использовать методы `getLocale` и `isLocale` фасада `App` для определения текущей локали или проверки совпадения локали с заданным значением:
 
     $locale = App::getLocale();
 
