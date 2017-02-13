@@ -1,13 +1,13 @@
-# Localization 
+# Локализация
 
-- [Introduction](#introduction)
-- [Defining Translation Strings](#defining-translation-strings)
-    - [Using Short Keys](#using-short-keys)
-    - [Using Translation Strings As Keys](#using-translation-strings-as-keys)
-- [Retrieving Translation Strings](#retrieving-translation-strings)
-    - [Replacing Parameters In Translation Strings](#replacing-parameters-in-translation-strings)
-    - [Pluralization](#pluralization)
-- [Overriding Package Language Files](#overriding-package-language-files)
+- [Введение](#introduction)
+- [Определение строк перевода](#defining-translation-strings)
+    - [Использование кратких ключей](#using-short-keys)
+    - [Использование строк перевода как ключей](#using-translation-strings-as-keys)
+- [Получение строк перевода](#retrieving-translation-strings)
+    - [Подстановка параметров в строках перевода](#replacing-parameters-in-translation-strings)
+    - [Плюрализация](#pluralization)
+- [Переопределение языковых файлов пакета](#overriding-package-language-files)
 
 <a name="introduction"></a>
 ## Introduction
