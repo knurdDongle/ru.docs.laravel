@@ -1,7 +1,7 @@
 - Вступление
     - [Версии фреймворка](/docs/{{version}}/releases)
     - [Руководство по обновлению](/docs/{{version}}/upgrade)
-    - [Руководство по контрибьюции](/docs/{{version}}/contributions)
+    - [Участие в разработке](/docs/{{version}}/contributions)
     - [Документация API](/api/{{version}})
 - Начало работы
     - [Установка](/docs/{{version}}/installation)
@@ -29,14 +29,14 @@
 - Фронтенд
     - [Шаблонизатор Blade](/docs/{{version}}/blade)
     - [Локализация](/docs/{{version}}/localization)
-    - [Frontend Scaffolding](/docs/{{version}}/frontend)
+    - [Построение фронтенда](/docs/{{version}}/frontend)
     - [Сборка статики](/docs/{{version}}/mix)
 - Безопасность
     - [Аутентификация](/docs/{{version}}/authentication)
-    - [Аутентификация для API](/docs/{{version}}/passport)
+    - [Аутентификация по API](/docs/{{version}}/passport)
     - [Авторизация](/docs/{{version}}/authorization)
     - [Шифрование](/docs/{{version}}/encryption)
-    - [Хэширование пароля](/docs/{{version}}/hashing)
+    - [Хэширование](/docs/{{version}}/hashing)
     - [Сброс пароля](/docs/{{version}}/passwords)
 - Общие вопросы
     - [Консольные команды Artisan](/docs/{{version}}/artisan)
