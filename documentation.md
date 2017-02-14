@@ -33,7 +33,7 @@
     - [Сборка статики](/docs/{{version}}/mix)
 - Безопасность
     - [Аутентификация](/docs/{{version}}/authentication)
-    - [Аутентификация по API](/docs/{{version}}/passport)
+    - [Аутентификация через API](/docs/{{version}}/passport)
     - [Авторизация](/docs/{{version}}/authorization)
     - [Шифрование](/docs/{{version}}/encryption)
     - [Хэширование](/docs/{{version}}/hashing)
