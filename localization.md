@@ -90,51 +90,51 @@
     }
 
 <a name="retrieving-translation-strings"></a>
-## Retrieving Translation Strings
+## Получение строк перевода
 
-You may retrieve lines from language files using the `__` helper function. The `__` method accepts the file and key of the translation string as its first argument. For example, let's retrieve the `welcome` translation string from the `resources/lang/messages.php` language file:
+Вы можете получать строки из языковых файлов с помощью функции `__`. Она принимает файл и ключ строки перевода в качестве первого параметра. Например, давайте получим строку перевода `welcome` из языкового файла `resources/lang/messages.php`:
 
     echo __('messages.welcome');
 
     echo __('I love programming.');
 
-Of course if you are using the [Blade templating engine](/docs/{{version}}/blade), you may use the `{{ }}` syntax to echo the translation string or use the `@lang` directive:
+Конечно, если вы используете [шаблонизатор Blade](/docs/{{version}}/blade), то вы можете использовать синтаксис `{{ }}` для отображения строки перевода, или использовать директиву `@lang`:
 
     {{ __('messages.welcome') }}
 
     @lang('messages.welcome')
 
-If the specified translation string does not exist, the `__` function will simply return the translation string key. So, using the example above, the `__` function would return `messages.welcome` if the translation string does not exist.
+Если запрошенной строки перевода не существует, то функция `__` вернёт ключ строки перевода. Таким образом, при использовании примера выше, функция `__` вернула бы `messages.welcome` при отсутствии строки перевода.
 
 <a name="replacing-parameters-in-translation-strings"></a>
-### Replacing Parameters In Translation Strings
+### Подстановка параметров в строках перевода
 
-If you wish, you may define place-holders in your translation strings. All place-holders are prefixed with a `:`. For example, you may define a welcome message with a place-holder name:
+При желании, вы можете указывать плейсхолдеры в ваших строках перевода. Все плейсхолдеры начинаются с символа `:`. Например, вы можете создать приветственное сообщение с плейсхолдером для имени:
 
     'welcome' => 'Welcome, :name',
 
-To replace the place-holders when retrieving a translation string, pass an array of replacements as the second argument to the `__` function:
+Для замены плейсхолдеров, при получении строки перевода, передайте массив с необходимыми заменами в качестве второго параметра функции `__`:
 
     echo __('messages.welcome', ['name' => 'dayle']);
 
-If your place-holder contains all capital letters, or only has its first letter capitalized, the translated value will be capitalized accordingly:
+Если ваш плейсхолдер содержит только прописные буквы, или только первая его буква является прописной, то переведённое значение будет преобразовано соответствующим образом:
 
     'welcome' => 'Welcome, :NAME', // Welcome, DAYLE
     'goodbye' => 'Goodbye, :Name', // Goodbye, Dayle
 
 
 <a name="pluralization"></a>
-### Pluralization
+### Плюрализация
 
-Pluralization is a complex problem, as different languages have a variety of complex rules for pluralization. By using a "pipe" character, you may distinguish singular and plural forms of a string:
+Плюрализация является комплексной проблемой, так как в разных языках существуют различные сложные правила плюрализации. С помощью символа "вертикальной черты" вы можете разграничить одиночную и множественную форму строки:
 
     'apples' => 'There is one apple|There are many apples',
 
-You may even create more complex pluralization rules which specify translation strings for multiple number ranges:
+Вы даже можете создать сложные правила плюрализации, которые определят строки перевода для нескольких диапазонов чисел:
 
     'apples' => '{0} There are none|[1,19] There are some|[20,*] There are many',
 
-After defining a translation string that has pluralization options, you may use the `trans_choice` function to retrieve the line for a given "count". In this example, since the count is greater than one, the plural form of the translation string is returned:
+После определения строки перевода с вариантами плюрализации, вы можете использовать функцию `trans_choice` для получения строки для заданного "числа". В данном примере, так как число больше нуля и единицы, была возвращена форма множественного числа этой строки:
 
     echo trans_choice('messages.apples', 10);
 
