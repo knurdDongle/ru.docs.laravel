@@ -139,8 +139,8 @@
     echo trans_choice('messages.apples', 10);
 
 <a name="overriding-package-language-files"></a>
-## Overriding Package Language Files
+## Переопределение языковых файлов пакета
 
-Some packages may ship with their own language files. Instead of changing the package's core files to tweak these lines, you may override them by placing files in the `resources/lang/vendor/{package}/{locale}` directory.
+Некоторые пакеты могут поставляться со своими собственными языковыми файлами. Вместо изменения корневых файлов пакета для внесения изменений в языковые строки, вы можете переопределить их, поместив файлы в директорию `resources/lang/vendor/{package}/{locale}`.
 
-So, for example, if you need to override the English translation strings in `messages.php` for a package named `skyrim/hearthfire`, you should place a language file at: `resources/lang/vendor/hearthfire/en/messages.php`. Within this file, you should only define the translation strings you wish to override. Any translation strings you don't override will still be loaded from the package's original language files.
+Таким образом, например, если вам необходимо переопределить перевод английских строк в файле `messages.php` пакета с названием `skyrim/hearthfire`, вам необходимо разместить языковой файл в: `resources/lang/vendor/hearthfire/en/messages.php`. Внутри этого файла вам следует указать только те строки, которые вы хотели бы переопределить. Все строки перевода, которые вы не переопределите, будут загружены из оригинальных языковых файлов пакета.
