@@ -1,4 +1,4 @@
-# Configuration
+# Configuration 
 
 - [Introduction](#introduction)
 - [Environment Configuration](#environment-configuration)
