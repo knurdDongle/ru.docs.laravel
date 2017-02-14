@@ -12,7 +12,7 @@
 <a name="introduction"></a>
 ## Введение
 
-Возможности локализации Laravel предоставляют удобный способ получения строк на нескольких языках, что позволяет легко организовать поддержку мультиязычности вашим приложением. Языковые строки хранятся в файлах, располагающихся внутри директории `resources/lang`. В ней должны располагаться подпапки для каждого языка, поддерживаемого вашим приложением:
+Возможности локализации Laravel предоставляют удобный способ получения строк на нескольких языках, что позволяет легко организовать поддержку мультиязычности вашим приложением. Языковые строки хранятся в файлах, располагающихся внутри директории `resources/lang`. В ней должны находиться подпапки для каждого языка, поддерживаемого вашим приложением:
 
     /resources
         /lang
@@ -54,12 +54,12 @@
     }
 
 <a name="defining-translation-strings"></a>
-## Defining Translation Strings
+## Определение строк перевода
 
 <a name="using-short-keys"></a>
-### Using Short Keys
+### Использование кратких ключей
 
-Typically, translation strings are stored in files within the `resources/lang` directory. Within this directory there should be a subdirectory for each language supported by the application:
+Обычно строки перевода хранятся в файлах, располагающихся внутри директории `resources/lang`. В ней должны находиться подпапки для каждого языка, поддерживаемого вашим приложением:
 
     /resources
         /lang
@@ -68,7 +68,7 @@ Typically, translation strings are stored in files within the `resources/lang` d
             /es
                 messages.php
 
-All language files simply return an array of keyed strings. For example:
+Все языковые файлы возвращают простой массив ключей и строк. Например:
 
     <?php
 
@@ -79,11 +79,11 @@ All language files simply return an array of keyed strings. For example:
     ];
 
 <a name="using-translation-strings-as-keys"></a>
-### Using Translation Strings As Keys
+### Использование строк перевода как ключей
 
-For applications with heavy translation requirements, defining every string with a "short key" can become quickly confusing when referencing them in your views. For this reason, Laravel also provides support for defining translation strings using the "default" translation of the string as the key.
+Для приложений с большими требованиями к переводу, определение каждой строки с помощью "краткого ключа" может привести к путанице при обращении к ним из ваших представлений. По этой причине, Laravel также предоставляет поддержку определения строк перевода с использованием стандартного перевода в качестве ключа.
 
-Translation files that use translation strings as keys are stored as JSON files in the `resources/lang` directory. For example, if your application has a Spanish translation, you should create a `resources/lang/es.json` file:
+Файлы переводов, которые используют строки перевода в качестве ключей, хранятся в JSON-файлах в директории `resources/lang`. Например, если приложение имеет поддержку испанского языка, то вы должны создать файл `resources/lang/es.json`:
 
     {
         "I love programming.": "Me encanta la programación."
