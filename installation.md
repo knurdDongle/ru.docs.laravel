@@ -1,11 +1,11 @@
-# Installation 
+# Установка 
 
-- [Installation](#installation)
-    - [Server Requirements](#server-requirements)
-    - [Installing Laravel](#installing-laravel)
-    - [Configuration](#configuration)
-- [Web Server Configuration](#web-server-configuration)
-    - [Pretty URLs](#pretty-urls)
+- [Установка](#installation)
+    - [Требования к серверу](#server-requirements)
+    - [Установка Laravel](#installing-laravel)
+    - [Настройка](#configuration)
+- [Настройка веб-сервера](#web-server-configuration)
+    - [Красивые URL](#pretty-urls)
 
 <a name="installation"></a>
 ## Installation
