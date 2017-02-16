@@ -1,4 +1,4 @@
-# Validation
+# Валидация
 
 - [Introduction](#introduction)
 - [Validation Quickstart](#validation-quickstart)
