@@ -1,6 +1,6 @@
 # Laravel Homestead
 
-- [Introduction](#introduction)
+- [Введение](#introduction)
 - [Installation & Setup](#installation-and-setup)
     - [First Steps](#first-steps)
     - [Configuring Homestead](#configuring-homestead)
@@ -21,18 +21,20 @@
 
 
 <a name="introduction"></a>
-## Introduction
+## Введение
 
-Laravel strives to make the entire PHP development experience delightful, including your local development environment. [Vagrant](https://www.vagrantup.com) provides a simple, elegant way to manage and provision Virtual Machines.
+Laravel стремится сделать восхитительным весь опыт разработки на PHP, включая вашу локальную среду разработки. [Vagrant](https://www.vagrantup.com) предоставляет простой и элегантный способ управления и обеспечения виртуальными машинами.
 
-Laravel Homestead это официальный, pre-packaged Vagrant box that provides you a wonderful development environment without requiring you to install PHP, a web server, and any other server software on your local machine. No more worrying about messing up your operating system! Vagrant boxes are completely disposable. If something goes wrong, you can destroy and re-create the box in minutes!
+Laravel Homestead - это официальный, предварительно упакованный образ Vagrant (box), который предоставляет замечательную среду разработки, без необходимости устанавливать PHP, веб-сервер и другое серверное ПО на вашей локальной машине. 
 
-Homestead runs on any Windows, Mac, or Linux system, and includes the Nginx web server, PHP 7.1, MySQL, Postgres, Redis, Memcached, Node, and all of the other goodies you need to develop amazing Laravel applications.
+Больше не стоит беспокоится о том что вы можете испортить свою операционную систему! Боксы Vagrant полностью одноразовые. Если что-то пойдет не так, вы сможете уничтожить и пересоздать бокс за считанные минуты!
 
-> {note} If you are using Windows, you may need to enable hardware virtualization (VT-x). It can usually be enabled via your BIOS. If you are using Hyper-V on a UEFI system you may additionally need to disable Hyper-V in order to access VT-x.
+Homestead запускается на любых системах Windows, Mac и Linux, и включает веб-сервер Nginx, PHP 7.1, MySQL, Postgres, Redis, Memcached, Node и другие вкусности, которые могут потребоваться вам для разработки потрясающих Laravel-приложений.
+
+> {Примечание} Если вы используете Windows, Вам может потребоваться включить аппаратную виртуализацию (VT-x). Это обычно включается через ваш BIOS. Если вы используете Hyper-V на UEFI системе, вам возможно потребуется дополнительно отключить Hyper-V для доступа к VT-x.
 
 <a name="included-software"></a>
-### Included Software
+### Включенный софт
 
 - Ubuntu 16.04
 - Git
@@ -43,7 +45,7 @@ Homestead runs on any Windows, Mac, or Linux system, and includes the Nginx web 
 - Sqlite3
 - Postgres
 - Composer
-- Node (With Yarn, PM2, Bower, Grunt, and Gulp)
+- Node (With Yarn, PM2, Bower, Grunt, и Gulp)
 - Redis
 - Memcached
 - Beanstalkd
