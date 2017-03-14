@@ -1,8 +1,8 @@
 # Laravel Homestead
 
 - [Введение](#introduction)
-- [Installation & Setup](#installation-and-setup)
-    - [First Steps](#first-steps)
+- [Установка и настройка](#installation-and-setup)
+    - [Первые шаги](#first-steps)
     - [Configuring Homestead](#configuring-homestead)
     - [Launching The Vagrant Box](#launching-the-vagrant-box)
     - [Per Project Installation](#per-project-installation)
@@ -17,8 +17,6 @@
 - [Network Interfaces](#network-interfaces)
 - [Updating Homestead](#updating-homestead)
 - [Old Versions](#old-versions)
-
-
 
 <a name="introduction"></a>
 ## Введение
@@ -51,40 +49,47 @@ Homestead запускается на любых системах Windows, Mac �
 - Beanstalkd
 
 <a name="installation-and-setup"></a>
-## Installation & Setup
+## Установка и настройка
 
 <a name="first-steps"></a>
-### First Steps
+### Первые шаги
 
-Before launching your Homestead environment, you must install [VirtualBox 5.1](https://www.virtualbox.org/wiki/Downloads), [VMWare](https://www.vmware.com), or [Parallels](http://www.parallels.com/products/desktop/) as well as [Vagrant](https://www.vagrantup.com/downloads.html). All of these software packages provide easy-to-use visual installers for all popular operating systems.
+Перед запуском среды Homestead, вы должны установить [VirtualBox 5.1](https://www.virtualbox.org/wiki/Downloads), [VMWare](https://www.vmware.com), или [Parallels](http://www.parallels.com/products/desktop/) а также [Vagrant](https://www.vagrantup.com/downloads.html). Все эти программные пакеты имеют легкие в использовании визуальные инсталяторы для всех популярных операционных систем.
 
-To use the VMware provider, you will need to purchase both VMware Fusion / Workstation and the [VMware Vagrant plug-in](https://www.vagrantup.com/vmware). Though it is not free, VMware can provide faster shared folder performance out of the box.
+Для использования провайдера VMware, вам потребуеться преобрести как VMware Fusion / Workstation, так и [VMware Vagrant plug-in](https://www.vagrantup.com/vmware). Хотя это не бесплатно, VMware может предоставить быструю производительность для совместного доступа к папкам с коробки.
 
-To use the Parallels provider, you will need to install [Parallels Vagrant plug-in](https://github.com/Parallels/vagrant-parallels). It is free of charge.
+Для использования провайдера Parallels, вам потребуеться установить [Parallels Vagrant plug-in](https://github.com/Parallels/vagrant-parallels). Это бесплатно.
 
-#### Installing The Homestead Vagrant Box
+#### Установка бокса Homestead Vagrant
 
-Once VirtualBox / VMware and Vagrant have been installed, you should add the `laravel/homestead` box to your Vagrant installation using the following command in your terminal. It will take a few minutes to download the box, depending on your Internet connection speed:
+После установки VirtualBox / VMware и Vagrant, вам следует добавить бокс `laravel/homestead` в Vagrant, используя следующую команду в терминале. Процесс загрузки бокса займет какое-то время, в зависимости от скорости вашего интернет-соединения:
 
-    vagrant box add laravel/homestead
+```bash
+vagrant box add laravel/homestead
+```
 
-If this command fails, make sure your Vagrant installation is up to date.
+Если эта команда не сработает, убедитесь в том что у вас установленна последняя версия Vagrant.
 
-#### Installing Homestead
+#### Установка Homestead
 
-You may install Homestead by simply cloning the repository. Consider cloning the repository into a `Homestead` folder within your "home" directory, as the Homestead box will serve as the host to all of your Laravel projects:
+Вы можете установить Homestead простым клонированием репозитория. 
 
-    cd ~
+Желательно клонировать репозиторий с папкой `Homestead` находясь в вашем "домашнем" каталоге, так как бокс Homestead будет служить хостом для всех ваших проектов Laravel:
 
-    git clone https://github.com/laravel/homestead.git Homestead
+```bash
+cd ~
+git clone https://github.com/laravel/homestead.git Homestead
+```
 
-Once you have cloned the Homestead repository, run the `bash init.sh` command from the Homestead directory to create the `Homestead.yaml` configuration file. The `Homestead.yaml` file will be placed in the `~/.homestead` hidden directory:
+После клонирования репозитория Homestead, запустите команду `bash init.sh` внутри директории Homestead, чтобы создать файл конфигурации `Homestead.yaml`. Файл `Homestead.yaml` будет помещён в скрытую директорию `~/.homestead`:
 
-    // Mac / Linux...
-    bash init.sh
+```bash
+// Mac / Linux...
+bash init.sh
 
-    // Windows...
-    init.bat
+// Windows...
+init.bat
+```
 
 <a name="configuring-homestead"></a>
 ### Configuring Homestead
