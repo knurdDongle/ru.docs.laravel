@@ -3,7 +3,7 @@
 - [Введение](#introduction)
 - [Установка и настройка](#installation-and-setup)
     - [Первые шаги](#first-steps)
-    - [Configuring Homestead](#configuring-homestead)
+    - [Конфигурирование Homestead](#configuring-homestead)
     - [Launching The Vagrant Box](#launching-the-vagrant-box)
     - [Per Project Installation](#per-project-installation)
     - [Installing MariaDB](#installing-mariadb)
@@ -32,7 +32,7 @@ Homestead запускается на любых системах Windows, Mac �
 > {Примечание} Если вы используете Windows, Вам может потребоваться включить аппаратную виртуализацию (VT-x). Это обычно включается через ваш BIOS. Если вы используете Hyper-V на UEFI системе, вам возможно потребуется дополнительно отключить Hyper-V для доступа к VT-x.
 
 <a name="included-software"></a>
-### Включенный софт
+### Включённый софт
 
 - Ubuntu 16.04
 - Git
@@ -92,59 +92,73 @@ init.bat
 ```
 
 <a name="configuring-homestead"></a>
-### Configuring Homestead
+### Конфигурирование Homestead
 
-#### Setting Your Provider
+#### Настройка вашего провайдера
 
-The `provider` key in your `~/.homestead/Homestead.yaml` file indicates which Vagrant provider should be used: `virtualbox`, `vmware_fusion`, `vmware_workstation`, or `parallels`. You may set this to the provider you prefer:
+Ключ `provider` в вашем файле `~/.homestead/Homestead.yaml` указывает какой Vagrant провайдер необходимо использовать: `virtualbox`, `vmware_fusion`, `vmware_workstation`, или `parallels`. Здесь вы можете установить какой провайдер вы будете использовать:
 
-    provider: virtualbox
+```yaml
+provider: virtualbox
+```
 
-#### Configuring Shared Folders
+#### Конфигурирование общих папок
 
-The `folders` property of the `Homestead.yaml` file lists all of the folders you wish to share with your Homestead environment. As files within these folders are changed, they will be kept in sync between your local machine and the Homestead environment. You may configure as many shared folders as necessary:
+В свойстве `folders` файла `Homestead.yaml` указанны все папки, доступ к которым вы хотите предоставить в среде Homestead. Как только файлы будут изменнены, то они тут же будут синхронизироваться между локальной машиной и средой Homestead. Настроить можно столько папок, сколько необходимо:
 
-    folders:
-        - map: ~/Code
-          to: /home/vagrant/Code
+```yaml
+folders:
+    - map: ~/Code
+      to: /home/vagrant/Code
+```
 
-To enable [NFS](https://www.vagrantup.com/docs/synced-folders/nfs.html), just add a simple flag to your synced folder configuration:
+Для включения [NFS](https://www.vagrantup.com/docs/synced-folders/nfs.html), просто добавьте флаг к кофигурации синхронизированных папок:
 
-    folders:
-        - map: ~/Code
-          to: /home/vagrant/Code
-          type: "nfs"
+```yaml
+folders:
+    - map: ~/Code
+      to: /home/vagrant/Code
+      type: "nfs"
+```
 
-You may also pass any options supported by Vagrant's [Synced Folders](https://www.vagrantup.com/docs/synced-folders/basic_usage.html) by listing them under the `options` key:
+Вы также можете передать любые опции, поддерживаемые Vagrant [Synced Folders](https://www.vagrantup.com/docs/synced-folders/basic_usage.html) путём их перечисления в ключе `options`:
 
-    folders:
-        - map: ~/Code
-          to: /home/vagrant/Code
-          type: "rsync"
-          options:
-              rsync__args: ["--verbose", "--archive", "--delete", "-zz"]
-              rsync__exclude: ["node_modules"]
+```yaml
+folders:
+    - map: ~/Code
+      to: /home/vagrant/Code
+      type: "rsync"
+      options:
+          rsync__args: ["--verbose", "--archive", "--delete", "-zz"]
+          rsync__exclude: ["node_modules"]
+```
 
 
-#### Configuring Nginx Sites
+#### Конфигурирование Nginx сайтов
 
-Not familiar with Nginx? No problem. The `sites` property allows you to easily map a "domain" to a folder on your Homestead environment. A sample site configuration is included in the `Homestead.yaml` file. Again, you may add as many sites to your Homestead environment as necessary. Homestead can serve as a convenient, virtualized environment for every Laravel project you are working on:
+Не знакомы с Nginx? Нет проблем. Свойство `sites` позволяет легко сопоставить "домен" с папкой в среде Homestead. Пример конфигурации сайта включен в файл `Homestead.yaml`. Опять же, вы можете добавить столько сайтов в свою среду Homestead, сколько необходимо. Homestead может служить удобным, виртуализированным окружением для каждого проекта Laravel, над которым вы работаете:
 
-    sites:
-        - map: homestead.app
-          to: /home/vagrant/Code/Laravel/public
+```yaml
+sites:
+    - map: homestead.app
+      to: /home/vagrant/Code/Laravel/public
+```
 
-If you change the `sites` property after provisioning the Homestead box, you should re-run `vagrant reload --provision`  to update the Nginx configuration on the virtual machine.
+Если вы измените свойство `sites` после инициализации Homestead бокса, вы должны перезапустить `vagrant reload --provision` для обновления конфигурации Nginx на виртуальной машине.
 
-#### The Hosts File
+#### Файл hosts
 
-You must add the "domains" for your Nginx sites to the `hosts` file on your machine. The `hosts` file will redirect requests for your Homestead sites into your Homestead machine. On Mac and Linux, this file is located at `/etc/hosts`. On Windows, it is located at `C:\Windows\System32\drivers\etc\hosts`. The lines you add to this file will look like the following:
+Вы должны добавить "домены" для ваших Nginx сайтов в файле `hosts` на вашей машине. Файл `hosts` будет делать редирект запросов для ваших Homestead сайтов в вашу Homestead машину. На Mac и Linux, этот файл находится в `/etc/hosts`. На Windows, он находится в `C:\Windows\System32\drivers\etc\hosts`. Строки, добавленные в этот файл, будут выглядеть следующим образом:
 
-    192.168.10.10  homestead.app
+```
+192.168.10.10  homestead.app
+```
 
-Make sure the IP address listed is the one set in your `~/.homestead/Homestead.yaml` file. Once you have added the domain to your `hosts` file and launched the Vagrant box you will be able to access the site via your web browser:
+Убедитесь что данный IP адрес указанный в вашем файле `~/.homestead/Homestead.yaml`. После того как вы добавили домен в свой файл `hosts` и запустили Vagrant бокс, вы сможете получить доступ к сайту через свой веб-браузер:
 
-    http://homestead.app
+```
+http://homestead.app
+```
 
 <a name="launching-the-vagrant-box"></a>
 ### Launching The Vagrant Box
