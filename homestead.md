@@ -4,7 +4,7 @@
 - [Установка и настройка](#installation-and-setup)
     - [Первые шаги](#first-steps)
     - [Конфигурирование Homestead](#configuring-homestead)
-    - [Launching The Vagrant Box](#launching-the-vagrant-box)
+    - [Запуск Vagrant Box](#launching-the-vagrant-box)
     - [Per Project Installation](#per-project-installation)
     - [Installing MariaDB](#installing-mariadb)
 - [Daily Usage](#daily-usage)
@@ -161,11 +161,11 @@ http://homestead.app
 ```
 
 <a name="launching-the-vagrant-box"></a>
-### Launching The Vagrant Box
+### Запуск Vagrant Box
 
-Once you have edited the `Homestead.yaml` to your liking, run the `vagrant up` command from your Homestead directory. Vagrant will boot the virtual machine and automatically configure your shared folders and Nginx sites.
+После того, как вы отредактировали `Homestead.yaml` по своему вкусу, запустите команду` vagrant up` из своего каталога Homestead. Vagrant загрузит виртуальную машину и автоматически настроит ваши общие папки и сайты Nginx.
 
-To destroy the machine, you may use the `vagrant destroy --force` command.
+Чтобы уничтожить машину, вы можете использовать команду `vagrant destroy --force`.
 
 <a name="per-project-installation"></a>
 ### Per Project Installation
