@@ -5,7 +5,7 @@
     - [Первые шаги](#first-steps)
     - [Конфигурирование Homestead](#configuring-homestead)
     - [Запуск Vagrant Box](#launching-the-vagrant-box)
-    - [Per Project Installation](#per-project-installation)
+    - [Установка для каждого проекта](#per-project-installation)
     - [Installing MariaDB](#installing-mariadb)
 - [Daily Usage](#daily-usage)
     - [Accessing Homestead Globally](#accessing-homestead-globally)
@@ -168,25 +168,31 @@ http://homestead.app
 Чтобы уничтожить машину, вы можете использовать команду `vagrant destroy --force`.
 
 <a name="per-project-installation"></a>
-### Per Project Installation
+### Установка для каждого проекта
 
-Instead of installing Homestead globally and sharing the same Homestead box across all of your projects, you may instead configure a Homestead instance for each project you manage. Installing Homestead per project may be beneficial if you wish to ship a `Vagrantfile` with your project, allowing others working on the project to simply `vagrant up`.
+Вместо того, чтобы устанавливать Homestead глобально и использовать один и тот же Homestead бокс во всех ваших проектах, вы можете настроить экземпляр Homestead для каждого управляемого вами проекта. Установка Homestead для каждого проекта может быть полезна, если вы хотите отправлять `Vagrantfile` с вашим проектом, позволяя другим, работать над проектом, просто используйте `vagrant up`.
 
-To install Homestead directly into your project, require it using Composer:
+Для установки Homestead напрямую в ваш проект, требуеться использовать Composer:
 
-    composer require laravel/homestead --dev
+```
+composer require laravel/homestead --dev
+```
 
-Once Homestead has been installed, use the `make` command to generate the `Vagrantfile` and `Homestead.yaml` file in your project root. The `make` command will automatically configure the `sites` and `folders` directives in the `Homestead.yaml` file.
+После того, как Homestead был установлен, используйте команду `make` для генерации ` Vagrantfile` и `Homestead.yaml` файла в корне проекта. Команда `make` автоматически настроит директивы` sites` и `folders` в файле` Homestead.yaml`.
 
 Mac / Linux:
 
-    php vendor/bin/homestead make
+```
+php vendor/bin/homestead make
+```
 
 Windows:
 
-    vendor\\bin\\homestead make
+```
+vendor\\bin\\homestead make
+```
 
-Next, run the `vagrant up` command in your terminal and access your project at `http://homestead.app` in your browser. Remember, you will still need to add an `/etc/hosts` file entry for `homestead.app` or the domain of your choice.
+Затем запустите команду `vagrant up` в вашем терминале и получите доступ к вашему проекту через `http://homestead.app` в вашем браузере. Помните, вам все равно следует добавить запись в файл `/etc/hosts` для `homestead.app` или домена по вашему выбору.
 
 <a name="installing-mariadb"></a>
 ### Installing MariaDB
