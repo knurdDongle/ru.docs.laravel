@@ -6,7 +6,7 @@
     - [Конфигурирование Homestead](#configuring-homestead)
     - [Запуск Vagrant Box](#launching-the-vagrant-box)
     - [Установка для каждого проекта](#per-project-installation)
-    - [Installing MariaDB](#installing-mariadb)
+    - [Установка MariaDB](#installing-mariadb)
 - [Daily Usage](#daily-usage)
     - [Accessing Homestead Globally](#accessing-homestead-globally)
     - [Connecting Via SSH](#connecting-via-ssh)
@@ -195,16 +195,18 @@ vendor\\bin\\homestead make
 Затем запустите команду `vagrant up` в вашем терминале и получите доступ к вашему проекту через `http://homestead.app` в вашем браузере. Помните, вам все равно следует добавить запись в файл `/etc/hosts` для `homestead.app` или домена по вашему выбору.
 
 <a name="installing-mariadb"></a>
-### Installing MariaDB
+### Установка MariaDB
 
-If you prefer to use MariaDB instead of MySQL, you may add the `mariadb` option to your `Homestead.yaml` file. This option will remove MySQL and install MariaDB. MariaDB serves as a drop-in replacement for MySQL so you should still use the `mysql` database driver in your application's database configuration:
+Если вы предпочитаете использовать MariaDB вместо MySQL, вы можете добавить опцию `mariadb` в ваш файл `Homestead.yaml`. Эта опция удалит MySQL и установит MariaDB. MariaDB cлужит заменой для MySQL, но вы все равно должны использовать драйвер базы данных `mysql` в конфигурации базы данных вашего приложения:
 
-    box: laravel/homestead
-    ip: "192.168.20.20"
-    memory: 2048
-    cpus: 4
-    provider: virtualbox
-    mariadb: true
+```
+box: laravel/homestead
+ip: "192.168.20.20"
+memory: 2048
+cpus: 4
+provider: virtualbox
+mariadb: true
+```
 
 <a name="daily-usage"></a>
 ## Daily Usage
