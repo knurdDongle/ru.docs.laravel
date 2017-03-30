@@ -7,8 +7,8 @@
     - [Запуск Vagrant Box](#launching-the-vagrant-box)
     - [Установка для каждого проекта](#per-project-installation)
     - [Установка MariaDB](#installing-mariadb)
-- [Daily Usage](#daily-usage)
-    - [Accessing Homestead Globally](#accessing-homestead-globally)
+- [Ежедневное использование](#daily-usage)
+    - [Доступ к Homestead Глобально](#accessing-homestead-globally)
     - [Connecting Via SSH](#connecting-via-ssh)
     - [Connecting To Databases](#connecting-to-databases)
     - [Adding Additional Sites](#adding-additional-sites)
@@ -209,37 +209,41 @@ mariadb: true
 ```
 
 <a name="daily-usage"></a>
-## Daily Usage
+## Ежедневное использование
 
 <a name="accessing-homestead-globally"></a>
-### Accessing Homestead Globally
+### Доступ к Homestead Глобально
 
-Sometimes you may want to `vagrant up` your Homestead machine from anywhere on your filesystem. You can do this on Mac / Linux systems by adding a Bash function to your Bash profile. On Windows, you may accomplish this by adding a "batch" file to your `PATH`. This scripts will allow you to run any Vagrant command from anywhere on your system and will automatically point that command to your Homestead installation:
+Иногда вам может понадобиться использовать `vagrant up` вашей Homestead машины с любого места вашей файловой системы. Вы можете сделать это в системах Mac / Linux, добавив функцию Bash в ваш профиль Bash. В Windows вы можете сделать это, добавив файл "batch" в ваш `PATH`. Эти скрипты позволят вам запустить любую команду Vagrant с любого места вашей системы и автоматически будут направлять эту команду в место с установленным Homestead:
 
 #### Linux
 
-    function homestead() {
-        ( cd ~/Homestead && vagrant $* )
-    }
+```
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
+```
 
-Make sure to tweak the `~/Homestead` path in the function to the location of your actual Homestead installation. Once the function is installed, you may run commands like `homestead up` or `homestead ssh` from anywhere on your system.
+Убедитесь, что путь `~ / Homestead` в функции настроен к месту фактической установки Homestead. Как только функция установлена, вы можете запускать команды, например `homestead up` или `homestead ssh` из любой точки вашей системы.
 
 #### Windows
 
-Create a `homestead.bat` batch file anywhere on your machine with the following contents:
+Создайте пакетный (batch) файл `homestead.bat` в любом месте на вашем компьютере со следующим содержимым:
 
-    @echo off
+```
+@echo off
 
-    set cwd=%cd%
-    set homesteadVagrant=C:\Homestead
+set cwd=%cd%
+set homesteadVagrant=C:\Homestead
 
-    cd /d %homesteadVagrant% && vagrant %*
-    cd /d %cwd%
+cd /d %homesteadVagrant% && vagrant %*
+cd /d %cwd%
 
-    set cwd=
-    set homesteadVagrant=
+set cwd=
+set homesteadVagrant=
+```
 
-Make sure to tweak the example `C:\Homestead` path in the script to the actual location of your Homestead installation. After creating the file, add the file location to your `PATH`. You may then run commands like `homestead up` or `homestead ssh` from anywhere on your system.
+Убедитесь, что в данном примере путь `C:\Homestead` в скрипте был изменен на фактическое местоположение с установленным Homestead. После создания файла, добавьте его в ваш `PATH`. Затем вы можете запускать команды, такие как `homestead up` или` homestead ssh` из любой точки вашей системы.
 
 <a name="connecting-via-ssh"></a>
 ### Connecting Via SSH
