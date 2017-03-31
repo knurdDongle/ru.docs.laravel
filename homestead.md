@@ -9,7 +9,7 @@
     - [Установка MariaDB](#installing-mariadb)
 - [Ежедневное использование](#daily-usage)
     - [Доступ к Homestead Глобально](#accessing-homestead-globally)
-    - [Connecting Via SSH](#connecting-via-ssh)
+    - [Подключение через SSH](#connecting-via-ssh)
     - [Connecting To Databases](#connecting-to-databases)
     - [Adding Additional Sites](#adding-additional-sites)
     - [Configuring Cron Schedules](#configuring-cron-schedules)
@@ -246,11 +246,11 @@ set homesteadVagrant=
 Убедитесь, что в данном примере путь `C:\Homestead` в скрипте был изменен на фактическое местоположение с установленным Homestead. После создания файла, добавьте его в ваш `PATH`. Затем вы можете запускать команды, такие как `homestead up` или` homestead ssh` из любой точки вашей системы.
 
 <a name="connecting-via-ssh"></a>
-### Connecting Via SSH
+### Подключение через SSH
 
-You can SSH into your virtual machine by issuing the `vagrant ssh` terminal command from your Homestead directory.
+Вы можете подключаться по SSH к вашей виртуальной машине, используя команду в терминале `vagrant ssh` из вашего каталога Homestead.
 
-But, since you will probably need to SSH into your Homestead machine frequently, consider adding the "function" described above to your host machine to quickly SSH into the Homestead box.
+Так как вероятней всего, вам часто понадобится подключаться по SSH к вашей машине Homestead, подумайте о том, чтобы добавить данную "функцию", описанную выше, в вашу хостевую машину для быстрого доступа по SSH к Homestead боксу.
 
 <a name="connecting-to-databases"></a>
 ### Connecting To Databases
