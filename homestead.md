@@ -253,13 +253,13 @@ set homesteadVagrant=
 Так как вероятней всего, вам часто понадобится подключаться по SSH к вашей машине Homestead, подумайте о том, чтобы добавить данную "функцию", описанную выше, в вашу хостевую машину для быстрого доступа по SSH к Homestead боксу.
 
 <a name="connecting-to-databases"></a>
-### Connecting To Databases
+### Подключение к базам данных
 
-A `homestead` database is configured for both MySQL and Postgres out of the box. For even more convenience, Laravel's `.env` file configures the framework to use this database out of the box.
+База данных `homestead` настроена для MySQL и Postgres из коробки. Для ещё большего удобства, файл Laravel `.env` настраивает фреймворк для этой базы данных из коробки.
 
-To connect to your MySQL or Postgres database from your host machine's database client, you should connect to `127.0.0.1` and port `33060` (MySQL) or `54320` (Postgres). The username and password for both databases is `homestead` / `secret`.
+Для подключения к вашей базе MySQL или Postgres из вашей хостевой машины клиентом для баз данных, вам нужно подключаться к `127.0.0.1` и использовать порт `33060` (MySQL) или `54320` (Postgres). Пользователь и пароль для обеих баз данных `homestead` / `secret`.
 
-> {note} You should only use these non-standard ports when connecting to the databases from your host machine. You will use the default 3306 and 5432 ports in your Laravel database configuration file since Laravel is running _within_ the virtual machine.
+> {note} Эти нестандартные порты вы должны использовать только для подключения к базам данных из вашей хостевой машины. Вам нужно использовать дефолтные порты `3306` и `5432` для вашей конфигурации базы данных Laravel поскольку Laravel запускается в виртуальной машине.
 
 <a name="adding-additional-sites"></a>
 ### Adding Additional Sites
