@@ -262,22 +262,26 @@ set homesteadVagrant=
 > {note} Эти нестандартные порты вы должны использовать только для подключения к базам данных из вашей хостевой машины. Вам нужно использовать дефолтные порты `3306` и `5432` для вашей конфигурации базы данных Laravel поскольку Laravel запускается в виртуальной машине.
 
 <a name="adding-additional-sites"></a>
-### Adding Additional Sites
+### Добавление дополнительных сайтов
 
-Once your Homestead environment is provisioned and running, you may want to add additional Nginx sites for your Laravel applications. You can run as many Laravel installations as you wish on a single Homestead environment. To add an additional site, simply add the site to your `~/.homestead/Homestead.yaml` file:
+Как только ваша среда Homestead будет подготовлена и запущена, вы можете добавить дополнительные сайты Nginx для ваших Laravel приложений. Вы можете запускать столько установок Laravel, сколько пожелаете в одной среде Homestead. Чтобы добавить дополнительный сайт, просто добавьте сайт в ваш файл `~/.homestead/Homestead.yaml`:
 
-    sites:
-        - map: homestead.app
-          to: /home/vagrant/Code/Laravel/public
-        - map: another.app
-          to: /home/vagrant/Code/another/public
+```yaml
+sites:
+    - map: homestead.app
+      to: /home/vagrant/Code/Laravel/public
+    - map: another.app
+      to: /home/vagrant/Code/another/public
+```
 
-If Vagrant is not automatically managing your "hosts" file, you may need to add the new site to that file as well:
+Если Vagrant автоматически не управляет вашим файлом "hosts", вам может потребоваться добавить новый сайт в этот файл:
 
-    192.168.10.10  homestead.app
-    192.168.10.10  another.app
+```
+192.168.10.10  homestead.app
+192.168.10.10  another.app
+```
 
-Once the site has been added, run the `vagrant reload --provision` command from your Homestead directory.
+После того, как сайт был добавлен, запустите команду `vagrant reload --provision` из вашей директории Homestead.
 
 <a name="configuring-cron-schedules"></a>
 ### Configuring Cron Schedules
