@@ -374,7 +374,7 @@ Laravel предоставляет удобный способ [планиров
 
 Below is a chart which shows the supported box versions, which version of Homestead source code to use, and the version of PHP provided:
 
-|   | Homestead Version | Box Version |
+|   | Версия Homestead | Версия Box |
 |---|---|---|
 | PHP 7.0 | 3.1.0 | 0.6.0 |
 | PHP 7.1 | 4.0.0 | 1.0.0 |
